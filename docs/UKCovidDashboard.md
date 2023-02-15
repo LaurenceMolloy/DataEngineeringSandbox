@@ -2,6 +2,4 @@
 
 <h3>Infection Rate Growth By Region & Age</h3>
 
-Hello World!!!
-
 ![Screenshot](images/UCD_Growth_By_Region_+_Age.png)
