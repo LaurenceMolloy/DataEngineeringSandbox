@@ -207,4 +207,4 @@ for position, region in plots:
         'date', 'cases_ma_7day', region, 
         min=min, max=max, groupby='age', folded=False)
 
-plt.savefig('../docs/UCD_Growth_By_Region_+_Age.png')
+plt.savefig('../docs/images/UCD_Growth_By_Region_+_Age.png')
