@@ -18,7 +18,7 @@ config = {
     'db_filename': "example.db",
     'db_tablename': "cases_by_specdate",
     # timeframe for the analysis
-    'from_dt': '2022-10-01',
+    'from_dt': '2022-08-01',
     'to_dt': '2023-02-01'
 }
 
@@ -69,8 +69,8 @@ def subplot(dataframe, ax, x, y, label=None):
 
 def configure_plot(ax, min, max, region):
     # set location of major and minor plot ticks
-    #ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1)) # major ticks every 1 month
-    ax.xaxis.set_major_locator(mdates.DayLocator(interval=7)) # minor ticks every 7 days
+    ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1)) # major ticks every 1 month
+    #ax.xaxis.set_major_locator(mdates.DayLocator(interval=7)) # minor ticks every 7 days
     ax.tick_params(axis='both', which='major', labelsize=6)
     #Chart title and axis labels
     ax.set_xlabel('Date', fontsize=8)
