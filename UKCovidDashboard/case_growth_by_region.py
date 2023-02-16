@@ -19,7 +19,7 @@ config = {
     'db_tablename': "cases_by_specdate",
     # timeframe for the analysis
     'from_dt': '2022-08-01',
-    'to_dt': '2023-02-01'
+    'to_dt': '2023-02-14'
 }
 
 # UK Covid Dashboard REST request endpoint url
