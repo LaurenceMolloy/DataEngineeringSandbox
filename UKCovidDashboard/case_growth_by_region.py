@@ -5,6 +5,7 @@ import matplotlib.dates as mdates      # date manipulation routines for use with
 import numpy as np
 import string
 import re
+from datetime import datetime
 
 # script configuration settings
 config = {
@@ -71,11 +72,11 @@ def configure_plot(ax, min, max, region):
     # set location of major and minor plot ticks
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1)) # major ticks every 1 month
     #ax.xaxis.set_major_locator(mdates.DayLocator(interval=7)) # minor ticks every 7 days
-    ax.tick_params(axis='both', which='major', labelsize=6)
+    ax.tick_params(axis='both', which='major', labelsize=8)
     #Chart title and axis labels
-    ax.set_xlabel('Date', fontsize=8)
-    ax.set_ylabel('% Daily Growth', fontsize=8)
-    ax.set_title(f'{region}', fontsize=8)
+    ax.set_xlabel('Date', fontsize=12)
+    ax.set_ylabel('% Daily Growth', fontsize=12)
+    ax.set_title(f'{region}', fontsize=12)
     ax.grid(axis='y', alpha=0.7)
     ax.set_ylim(min, max)
     # formatting the tick labels as '01/03/2020'
@@ -186,13 +187,18 @@ ax_dict = fig.subplot_mosaic(layout)
 source_text = f'Data Source: UK Covid Dashboard\n{endpoint}'
 plt.figtext(0.125, 0.08, source_text, ha='left', fontsize=8)
 
-copyright_text = f'DataViz design by Laurence Molloy (2022)\n'
+ts = datetime.utcnow()
+ts_date = ts.strftime("%d-%m-%Y")
+ts_time = ts.strftime("%H:%M:%S")
+copyright_text  = f'DataViz design by Laurence Molloy (2022)\n'
+copyright_text += f'generated on {ts_date} at {ts_time}'
+
 plt.figtext(0.9, 0.08, copyright_text, ha='right', fontsize=8)
 
-title  = (  "Daily Growth (%) for Trailing 7 Day +VE Covid Test Counts - "
+title  = (  "Daily Growth (%) for Trailing 7 Day +VE Covid Test Counts\n"
             "7 Day Exponential Moving Average "
             "(Tau=5), by Specimen Date, Stratified by Age Range"    )
-fig.suptitle(title, fontsize=10, y=0.95)
+fig.suptitle(title, fontsize=14, y=0.975)
 
 positions = string.ascii_uppercase[0:9]
 regions = [ 'North West',       'Yorkshire and The Humber', 'North East',
