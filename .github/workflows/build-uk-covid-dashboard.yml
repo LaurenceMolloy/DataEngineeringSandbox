@@ -33,30 +33,3 @@ jobs:
           commit_user_name: Laurence Molloy
           commit_user_email: laurence.molloy@gmail.com
           commit_author: Laurence Molloy <laurence.molloy@gmail.com>
-
-#      - name: Upload generated file
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: out.txt
-#          path: .github/artifacts/out.txt
-
-#      - name: commit files  
-#        run:
-#          git config --local user.name "Laurence Molloy"
-#          git config --local user.email "laurence.molloy@gmail.com"
-#          git add out.txt
-#          git commit -am "GH action files added $(date)"
- #         git push -f origin main
-
-#
-#      - name: copy file
-#        uses: canastro/copy-file-action@master
-#        with:
-#          source: "out.txt"
-#          target: ".github/artifacts/out.txt"
-
-#      - name: Deploy to main
-#        uses: JamesIves/github-pages-deploy-action@4.1.4
-#        with:
-#          branch: main
-#          folder: .github/artifacts
