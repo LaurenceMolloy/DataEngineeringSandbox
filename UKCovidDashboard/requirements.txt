@@ -1,11 +1,5 @@
-# working on this to make it runnable in VSCode
-
 matplotlib
 pandas
-sqlite3
 numpy
 scipy
 datetime
-
-
-
