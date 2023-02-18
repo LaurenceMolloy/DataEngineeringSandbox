@@ -7,6 +7,9 @@ on:
 jobs:
   case-growth-by-region:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: UKCovidDashboard
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
@@ -23,12 +26,10 @@ jobs:
           python -m pip install datetime
           if [ -f requirements.txts ]; then pip install -r requirements.txt; fi
       - name: Run python script
-        #working-directory: UKCovidDashboard
         run: |
-          cd UKCovidDashboard
           chmod +x ./test_python.py
           python ./test_python.py
-          mkdir -f ../docs/images && cp out.txt ../docs/images
+          mkdir -p ../docs/images && cp out.txt ../docs/images
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
