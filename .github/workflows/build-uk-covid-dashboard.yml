@@ -32,7 +32,7 @@ jobs:
         run:
           git config --local user.name Laurence Molloy
           git config --local user.email "laurence.molloy@gmail.com"
-          if ! git diff --exit-code; then
+          if [[ ! git diff --exit-code ]]; then
               git add out.txt
               git commit -am "GH action files added $(date)"
               git push -f origin main
