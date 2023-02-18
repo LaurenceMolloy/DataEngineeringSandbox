@@ -20,7 +20,8 @@ jobs:
           if [ -f requirements.txts ]; then pip install -r requirements.txt; fi
       - name: Run python script
         run: |
-          ./UKCovidDashboard/test_python.py
+          chmod +x ./UKCovidDashboard/test_python.py
+          python ./UKCovidDashboard/test_python.py
       - name: Upload generated file
         uses: actions/upload-artifact@v3
         with:
