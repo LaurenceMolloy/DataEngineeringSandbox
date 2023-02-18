@@ -23,8 +23,8 @@ jobs:
           python -m pip install datetime
           if [ -f requirements.txts ]; then pip install -r requirements.txt; fi
       - name: Run python script
+        working-directory: UKCovidDashboard
         run: |
-          working-directory: UKCovidDashboard
           chmod +x ./test_python.py
           python ./test_python.py
 
