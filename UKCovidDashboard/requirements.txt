@@ -2,9 +2,10 @@
 
 matplotlib
 scipy
+datetime
 
 #pandas
 #sqlite3
 #re
 #numpy
-#datetime
+

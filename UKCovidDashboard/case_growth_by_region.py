@@ -216,7 +216,8 @@ for position, region in plots:
 
 
 # define output path relative to this script (not path of calling code)
-script_path = os.path.realpath(os.path.dirname(__file__))
-parent_path = os.path.normpath(os.path.join(script_path, os.pardir))
-file_path = os.path.join(parent_path, 'docs', 'images', 'UCD_Growth_By_Region_+_Age.png')
-plt.savefig(file_path)
+#script_path = os.path.realpath(os.path.dirname(__file__))
+#parent_path = os.path.normpath(os.path.join(script_path, os.pardir))
+#file_path = os.path.join(parent_path, 'docs', 'images', 'UCD_Growth_By_Region_+_Age.png')
+#plt.savefig(file_path)
+plt.savefig('UCD_Growth_By_Region_+_Age.png')

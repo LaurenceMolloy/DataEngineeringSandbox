@@ -23,13 +23,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install datetime
-          if [ -f requirements.txts ]; then pip install -r requirements.txt; fi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run python script
         run: |
           chmod +x ./test_python.py
-          python ./test_python.py
-          mkdir -p ../docs/images && cp out.txt ../docs/images
+          python ./case_growth_by_region.py
+          mkdir -p ../docs/images && cp UCD_Growth_By_Region_+_Age.png ../docs/images
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
