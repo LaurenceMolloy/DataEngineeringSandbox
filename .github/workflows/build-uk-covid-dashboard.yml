@@ -27,7 +27,7 @@ jobs:
         with:
           name: out.txt
           path: out.txt
-        - name: Deploy to main
+      - name: Deploy to main
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: main
