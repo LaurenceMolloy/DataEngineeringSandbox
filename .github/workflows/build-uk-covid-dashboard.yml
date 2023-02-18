@@ -22,16 +22,28 @@ jobs:
         run: |
           chmod +x ./UKCovidDashboard/test_python.py
           python ./UKCovidDashboard/test_python.py
-      - name: Upload generated file
-        uses: actions/upload-artifact@v3
-        with:
-          name: out.txt
-          path: .github/artifacts/out.txt
-      - name: copy file
-        uses: canastro/copy-file-action@master
-        with:
-          source: "out.txt"
-          target: ".github/artifacts/out.txt"
+#      - name: Upload generated file
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: out.txt
+#          path: .github/artifacts/out.txt
+
+      - name: commit files  
+        run:
+          git config --local user.name Laurence Molloy
+          git config --local user.email "laurence.molloy@gmail.com"
+          if ! git diff --exit-code; then
+              git add out.txt
+              git commit -am "GH action files added $(date)"
+              git push -f origin main
+          fi
+
+#
+#      - name: copy file
+#        uses: canastro/copy-file-action@master
+#        with:
+#          source: "out.txt"
+#          target: ".github/artifacts/out.txt"
 
 #      - name: Deploy to main
 #        uses: JamesIves/github-pages-deploy-action@4.1.4
