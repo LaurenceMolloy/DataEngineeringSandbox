@@ -26,12 +26,12 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: out.txt
-          path: out.txt
+          path: .github/artifacts/out.txt
       - name: copy file
         uses: canastro/copy-file-action@master
         with:
-          source: "index.html"
-          target: ".github/artifacts/index.html"
+          source: "out.txt"
+          target: ".github/artifacts/out.txt"
 
 #      - name: Deploy to main
 #        uses: JamesIves/github-pages-deploy-action@4.1.4
