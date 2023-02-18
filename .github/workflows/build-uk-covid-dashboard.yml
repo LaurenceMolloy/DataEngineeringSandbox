@@ -27,8 +27,14 @@ jobs:
         with:
           name: out.txt
           path: out.txt
-      - name: Deploy to main
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+      - name: copy file
+        uses: canastro/copy-file-action@master
         with:
-          branch: main
-          folder: docs/images
+          source: "index.html"
+          target: ".github/artifacts/index.html"
+
+#      - name: Deploy to main
+#        uses: JamesIves/github-pages-deploy-action@4.1.4
+#        with:
+#          branch: main
+#          folder: .github/artifacts
