@@ -24,8 +24,9 @@ jobs:
           if [ -f requirements.txts ]; then pip install -r requirements.txt; fi
       - name: Run python script
         run: |
-          chmod +x ./UKCovidDashboard/test_python.py
-          python ./UKCovidDashboard/test_python.py
+          working-directory: UKCovidDashboard
+          chmod +x ./test_python.py
+          python ./test_python.py
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
